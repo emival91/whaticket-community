@@ -12,12 +12,12 @@ services:
     environment:
       - DB_HOST=mysql
       - DB_USER=root
-      - DB_PASS=${MYSQL_ROOT_PASSWORD:-HJjRm1lAUz7Nf65iSxEKjRY9Q2wB526hacsWaC9418DgPifDEs0lT8Sk4VJM1x8H}
+      - DB_PASS=${MYSQL_ROOT_PASSWORD:-strongpassword}
       - DB_NAME=${MYSQL_DATABASE:-whaticket}
       - JWT_SECRET=${JWT_SECRET:-3123123213123}
       - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:-75756756756}
-      - BACKEND_URL=${BACKEND_URL:-http://localhost}
-      - FRONTEND_URL=${FRONTEND_URL:-http://localhost:3000}
+      - BACKEND_URL=https://whaticket-api.atende24h.com.br
+      - FRONTEND_URL=https://whaticket-app.atende24h.com.br
       - PROXY_PORT=${PROXY_PORT:-8080}
       - CHROME_ARGS=--no-sandbox --disable-setuid-sandbox
     ports:
@@ -37,7 +37,7 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - URL_BACKEND=backend:3000
-      - REACT_APP_BACKEND_URL=${BACKEND_URL:-http://localhost}:${PROXY_PORT:-8080}/
+      - REACT_APP_BACKEND_URL=https://whaticket-api.atende24h.com.br/
       - FRONTEND_SERVER_NAME=${FRONTEND_SERVER_NAME}
       - BACKEND_SERVER_NAME=${BACKEND_SERVER_NAME}
     volumes:
