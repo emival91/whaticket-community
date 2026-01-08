@@ -37,7 +37,7 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - URL_BACKEND=backend:3000
-      - VITE_BACKEND_URL=https://whaticket-api.atende24h.com.br/
+      - REACT_APP_BACKEND_URL=https://whaticket-api.atende24h.com.br/
       - FRONTEND_SERVER_NAME=${FRONTEND_SERVER_NAME}
       - BACKEND_SERVER_NAME=${BACKEND_SERVER_NAME}
     volumes:
