@@ -10,9 +10,9 @@ services:
       context: ./backend
       dockerfile: ./Dockerfile
     environment:
-      - DB_HOST=mysql
+      - DB_HOST=mysql-database-o8osc4wkkcokgck0go0ww4gk
       - DB_USER=root
-      - DB_PASS=${MYSQL_ROOT_PASSWORD:-strongpassword}
+      - DB_PASS=${MYSQL_ROOT_PASSWORD:-HJjRm1lAUz7Nf65iSxEKjRY9Q2wB526hacsWaC9418DgPifDEs0lT8Sk4VJM1x8H}
       - DB_NAME=${MYSQL_DATABASE:-whaticket}
       - JWT_SECRET=${JWT_SECRET:-3123123213123}
       - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:-75756756756}
