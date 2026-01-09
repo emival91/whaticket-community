@@ -16,22 +16,12 @@ Sentry.init({ dsn: process.env.SENTRY_DSN });
 
 const app = express();
 
-app.use(cors({
-  origin: [
-    "https://whaticket-app.atende24h.com.br",
-  ],
-  credentials: true,
-  methods: ["GET","POST","PUT","PATCH","DELETE","OPTIONS"],
-  allowedHeaders: ["Content-Type","Authorization"]
-}));
-
-const io = new Server(httpServer, {
-  cors: {
-    origin: "https://whaticket-app.atende24h.com.br",
-    credentials: true
-  }
-});
-
+app.use(
+  cors({
+    credentials: true,
+    origin: process.env.FRONTEND_URL
+  })
+);
 app.use(cookieParser());
 app.use(express.json());
 app.use(Sentry.Handlers.requestHandler());
